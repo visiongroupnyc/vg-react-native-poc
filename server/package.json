@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/visiongroupnyc/vg-react-native-poc/issues"
   },
-  "homepage": "https://github.com/visiongroupnyc/vg-react-native-poc#readme"
+  "homepage": "https://github.com/visiongroupnyc/vg-react-native-poc#readme",
+  "dependencies": {
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "universal-pattern": "^1.0.29"
+  }
 }

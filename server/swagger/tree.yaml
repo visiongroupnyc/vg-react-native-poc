@@ -1,0 +1,257 @@
+paths:
+  /trees:
+    get:
+      tags:
+        - trees
+      summary: trees list
+      x-swagger-router-controller: universal.search
+      parameters:
+        - $ref: '#/parameters/q'
+        - $ref: '#/parameters/page'
+        - $ref: '#/parameters/sorting'
+        - $ref: '#/parameters/limit'
+        - $ref: '#/parameters/fields'
+
+      responses:
+        '200':
+          description: reports
+          schema:
+            $ref: '#/definitions/trees'
+    put:
+      tags:
+        - trees
+      summary: insert new tree
+      x-swagger-router-controller: universal.insert
+      parameters:
+        - name: modeldata
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/treeInput'
+      responses:
+        '200':
+          description: cart added
+          schema:
+            $ref: '#/definitions/trees'
+
+    delete:
+      tags:
+        - trees
+      summary: delete tree
+      x-swagger-router-controller: universal.remove
+      parameters:
+        - name: _id
+          in: query
+          required: true
+          type: string
+      responses:
+        '200':
+          description: deleted tree
+          schema:
+            $ref: '#/definitions/trees'
+
+    patch:
+      tags:
+        - trees
+      summary: for updated tree document
+      x-swagger-router-controller: universal.update
+      parameters:
+        - name: modeldata
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/treeUpdate'
+      responses:
+        '200':
+          description: updated tree
+          schema:
+            $ref: '#/definitions/trees'
+
+definitions:
+  treeInput:
+    x-swagger-model-version: 3
+    type: object
+    properties:
+      created_at:
+        type: string
+      tree_id:
+        type: string
+      block_id:
+        type: string
+      the_geom:
+        type: string
+      tree_dbh:
+        type: string
+      stump_diam:
+        type: string
+      curb_loc:
+        type: string
+      status:
+        type: string
+      health:
+        type: string
+      spc_latin:
+        type: string
+      spc_common:
+        type: string
+      steward:
+        type: string
+      guards:
+        type: string
+      sidewalk:
+        type: string
+      user_type:
+        type: string
+      problems:
+        type: string
+      root_stone:
+        type: string
+      root_grate:
+        type: string
+      root_other:
+        type: string
+      trnk_wire:
+        type: string
+      trnk_light:
+        type: string
+      trnk_other:
+        type: string
+      brnch_ligh:
+        type: string
+      brnch_shoe:
+        type: string
+      brnch_other:
+        type: string
+      address:
+        type: string
+      zipcode:
+        type: string
+      zip_city:
+        type: string
+      cb_num:
+        type: string
+      borocode:
+        type: string
+      boroname:
+        type: string
+      cncldist:
+        type: string
+      st_assem:
+        type: string
+      st_senate:
+        type: string
+      nta:
+        type: string
+      nta_name:
+        type: string
+      boro_ct:
+        type: string
+      state:
+        type: string
+      latitude:
+        type: string
+      longitude:
+        type: string
+      x_sp:
+        type: string
+      y_sp:
+        type: string
+
+  treeUpdate:
+    type: object
+    properties:
+      _id:
+        type: string
+        format: mongoId
+
+  trees:
+    type: object
+    properties:
+      _id:
+        type: string
+      added:
+        type: string
+      created_at:
+        type: string
+      tree_id:
+        type: string
+      block_id:
+        type: string
+      the_geom:
+        type: string
+      tree_dbh:
+        type: string
+      stump_diam:
+        type: string
+      curb_loc:
+        type: string
+      status:
+        type: string
+      health:
+        type: string
+      spc_latin:
+        type: string
+      spc_common:
+        type: string
+      steward:
+        type: string
+      guards:
+        type: string
+      sidewalk:
+        type: string
+      user_type:
+        type: string
+      problems:
+        type: string
+      root_stone:
+        type: string
+      root_grate:
+        type: string
+      root_other:
+        type: string
+      trnk_wire:
+        type: string
+      trnk_light:
+        type: string
+      trnk_other:
+        type: string
+      brnch_ligh:
+        type: string
+      brnch_shoe:
+        type: string
+      brnch_other:
+        type: string
+      address:
+        type: string
+      zipcode:
+        type: string
+      zip_city:
+        type: string
+      cb_num:
+        type: string
+      borocode:
+        type: string
+      boroname:
+        type: string
+      cncldist:
+        type: string
+      st_assem:
+        type: string
+      st_senate:
+        type: string
+      nta:
+        type: string
+      nta_name:
+        type: string
+      boro_ct:
+        type: string
+      state:
+        type: string
+      latitude:
+        type: string
+      longitude:
+        type: string
+      x_sp:
+        type: string
+      y_sp:
+        type: string
