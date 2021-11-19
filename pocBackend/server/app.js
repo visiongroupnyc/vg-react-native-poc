@@ -15,10 +15,10 @@ up(app, {
     folder: path.join(process.cwd(), 'swagger'),
     info: {
       version: 10.0,
-      title: 'Universal Pattern Example',
+      title: 'Tree-Open Data Poc',
       termsOfService: 'www.domain.com/terms',
       contact: {
-        email: 'cesar@visiongroup.nyc',
+        email: 'orianadecaro@gmail.com.com.ar',
       },
       license: {
         name: 'Apache',
@@ -33,7 +33,9 @@ up(app, {
     uri: config.get('connection.mongodb.uri'),
     name: config.get('connection.mongodb.name'),
   },
-  routeController: (req, res, next, props) => next(),
+  routeController: (req, res, next, props) => next(), 
+  
 })
   .then((upInstance) => server.listen(port, () => console.info(`listen *:${port}`)))
   .catch(err => console.error('Error initializing ', err));
+console.log(app)
