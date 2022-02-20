@@ -1,0 +1,15 @@
+{
+    "basePath": "/core",
+    "host": "localhost",
+    "port": 3000,
+    "name": "Tree-Open Data",
+    "version": "0.1",
+    "connection": {
+      "mongodb": {
+        "uri": "mongodb://127.0.0.1",
+        "name": "openDataPoc"
+        
+        
+    }
+  }
+  }
